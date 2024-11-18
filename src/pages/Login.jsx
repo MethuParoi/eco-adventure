@@ -1,6 +1,7 @@
 import { useState, useRef, useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { user, loginUser, googleSignIn } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
         <div className="">
           {user && (
@@ -43,7 +44,7 @@ const Login = () => {
               <img
                 src={user.photoURL}
                 alt="Avatar"
-                className="w-20 rounded-full border-2 border-red-500"
+                className="w-20 rounded-full border-2 border-neutral"
               />
               <p className="">
                 Logged in successfully! {user.displayName || user.email}
@@ -97,25 +98,29 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full px-4 py-2 text-lg font-medium text-white bg-primary rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Login
           </button>
+        </form>
+        <div className="flex flex-col gap-y-3 items-center justify-center">
           <button
             onClick={() => handleGoogleSignIn()}
-            className="w-full flex justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full flex justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-secondary rounded-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <FaGoogle />
-            <p className="">Login with Google</p>
+            <p className="text-lg">Login with Google</p>
           </button>
-
           <p className="text-sm text-center text-gray-600">
             Don't have an account?{" "}
-            <a href="/register" className="text-blue-500 hover:underline">
+            <Link to="/register" className="text-blue-500 hover:underline">
               Register here
-            </a>
+            </Link>
           </p>
-        </form>
+          <Link to="/" className="text-blue-500 hover:underline">
+            Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );

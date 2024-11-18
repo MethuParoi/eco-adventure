@@ -1,7 +1,24 @@
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { useContext, useState } from "react";
 
 function Navbar() {
+  const [showUserName, setShowUserName] = useState(false);
   const navigate = useNavigate();
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    if (user) {
+      try {
+        await logoutUser();
+        alert("User logged out, navigating to home");
+        navigate("/"); // Navigate after successful logout
+      } catch (error) {
+        console.error("Error logging out:", error.message);
+      }
+    }
+  };
+
   return (
     <div className="navbar bg-secondary">
       <div className="navbar-start">
@@ -28,10 +45,13 @@ function Navbar() {
           >
             <li>
               <button
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  user ? handleLogout : null;
+                  user ? navigate("/") : navigate("/login");
+                }}
                 className="text-neutral"
               >
-                Login
+                {user ? "Logout" : "Login"}
               </button>
             </li>
             <li>
@@ -39,7 +59,7 @@ function Navbar() {
                 onClick={() => navigate("/register")}
                 className="text-neutral"
               >
-                Register
+                {user ? user.displayName || user.email : "Register"}
               </button>
             </li>
           </ul>
@@ -49,20 +69,44 @@ function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <button onClick={() => navigate("/login")} className="">
-              Login
-            </button>
+            <button className="text-neutral">Home</button>
           </li>
           <li>
-            <button onClick={() => navigate("/register")} className="">
-              Register
-            </button>
+            <button className="text-neutral">Update Profile</button>
+          </li>
+          <li>
+            <button className="text-neutral">User Profile</button>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <button className="btn mr-2">Update Profile</button>
-        <button className="btn">User Profile</button>
+      <div className="navbar-end relative">
+        <button
+          onClick={() => {
+            user ? handleLogout() : null;
+            user ? navigate("/") : navigate("/login");
+          }}
+          className="text-neutral hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent "
+        >
+          {user ? "Logout" : "Login"}
+        </button>
+        {user && (
+          <div
+            onMouseEnter={() => setShowUserName(true)}
+            onMouseLeave={() => setShowUserName(false)}
+            className="pr-6 pl-5 cursor-pointer"
+          >
+            <img
+              src={user.photoURL}
+              alt="Avatar"
+              className="w-14 rounded-full border-2 border-neutral"
+            />
+          </div>
+        )}
+        {showUserName && (
+          <div className="text-neutral font-medium text-xl btn bg-primary border-transparent hover:bg-accent absolute top-1 right-24">
+            {user.displayName}
+          </div>
+        )}
       </div>
     </div>
   );
