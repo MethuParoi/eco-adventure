@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import auth from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -185,7 +186,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full py-2 mt-4 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full py-2 mt-4 font-semibold text-white bg-primary rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg"
           >
             Register
           </button>
@@ -193,10 +194,16 @@ const Register = () => {
 
         <p className="text-sm text-center text-gray-600">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Log in
-          </a>
+          </Link>
         </p>
+
+        <div className="flex items-center justify-center">
+          <Link to="/" className="text-blue-500 hover:underline">
+            Back to Home
+          </Link>
+        </div>
 
         {errorMessage && <p className="text-sm text-red-500">{errorMessage}</p>}
         {success && (
