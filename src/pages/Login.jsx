@@ -2,6 +2,7 @@ import { useState, useRef, useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { user, loginUser, googleSignIn } = useContext(AuthContext);
@@ -24,7 +25,10 @@ const Login = () => {
       setFormData({ email: "", password: "" }); // Reset form data
       emailRef.current.value = "";
       passwordRef.current.value = "";
+      navigate("/");
+      toast.success("User logged in successfully!");
     } catch (error) {
+      toast.error(error.message);
       console.error("Error logging in:", error.message);
     }
   };
@@ -32,9 +36,10 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
-
       navigate("/");
+      toast.success("User logged in successfully!");
     } catch (error) {
+      toast.error(error.message);
       console.error("Error logging in with Google:", error.message);
     }
   };

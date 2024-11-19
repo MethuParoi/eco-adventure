@@ -1,22 +1,23 @@
-function AdventureCards() {
+function AdventureCards({ spot }) {
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+        <img className="w-full h-60 object-cover" src={spot.image} alt="spot" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          Shoes!
-          <div className="badge badge-secondary">NEW</div>
-        </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
-        </div>
+        <h2 className="card-title line-clamp-1">{spot.title}</h2>
+        {spot.ecoFriendlyFeatures.map((feature) => (
+          <div
+            key={feature}
+            className="badge badge-secondary bg-green-200 border-transparent text-gray-800"
+          >
+            {feature}
+          </div>
+        ))}
+
+        <button className="w-[100%] h-12 bg-primary hover:bg-secondary text-neutral text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto mt-4">
+          Explore Now
+        </button>
       </div>
     </div>
   );

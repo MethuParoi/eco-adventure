@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext, useState } from "react";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const [showUserName, setShowUserName] = useState(false);
@@ -11,7 +12,7 @@ function Navbar() {
     if (user) {
       try {
         await logoutUser();
-        alert("User logged out, navigating to home");
+        toast.success("User logged out successfully");
         navigate("/"); // Navigate after successful logout
       } catch (error) {
         console.error("Error logging out:", error.message);

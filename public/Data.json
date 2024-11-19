@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Everest Base Camp Trek",
-    "image": "everest_base_camp.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/everest.webp",
     "category": "Mountain Treks",
     "shortDescription": "A breathtaking trek to the base of the world's highest mountain.",
     "adventureCost": "$1500",
@@ -30,7 +30,7 @@
   {
     "id": 2,
     "title": "Great Barrier Reef Dive",
-    "image": "great_barrier_reef.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/Great-Barrier-Reef.webp",
     "category": "Ocean Dives",
     "shortDescription": "Explore the vibrant underwater world of the Great Barrier Reef.",
     "adventureCost": "$1200",
@@ -58,7 +58,7 @@
   {
     "id": 3,
     "title": "Serengeti Wildlife Safari",
-    "image": "serengeti_safari.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/serengeti-safaris-tanzania-wildlife-adventures.jpg",
     "category": "Wildlife Safaris",
     "shortDescription": "Experience the majestic wildlife of the Serengeti in its natural habitat.",
     "adventureCost": "$1800",
@@ -86,7 +86,7 @@
   {
     "id": 4,
     "title": "Amazon Rainforest Expedition",
-    "image": "amazon_expedition.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/Amazon-Rainforest.jpg",
     "category": "Forest Expeditions",
     "shortDescription": "Discover the incredible biodiversity of the Amazon rainforest.",
     "adventureCost": "$2000",
@@ -114,7 +114,7 @@
   {
     "id": 5,
     "title": "Grand Canyon Camping Retreat",
-    "image": "grand_canyon_camping.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/grand-canyone.jpg",
     "category": "Camping Retreats",
     "shortDescription": "Enjoy a peaceful retreat in the iconic Grand Canyon.",
     "adventureCost": "$800",
@@ -142,7 +142,7 @@
   {
     "id": 6,
     "title": "Zambezi River Rafting",
-    "image": "zambezi_rafting.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/river-rafting.jpg",
     "category": "River Adventures",
     "shortDescription": "Thrill-seekers’ paradise with adrenaline-pumping rapids on the Zambezi.",
     "adventureCost": "$900",
@@ -170,7 +170,7 @@
   {
     "id": 7,
     "title": "Sahara Desert Exploration",
-    "image": "sahara_exploration.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/Camel-caravan-Sahara-Morocco.webp",
     "category": "Desert Exploration",
     "shortDescription": "Uncover the mystique of the Sahara with a guided desert trek.",
     "adventureCost": "$1400",
@@ -198,7 +198,7 @@
   {
     "id": 8,
     "title": "Sundarbans Mangrove Safari",
-    "image": "sundarbans_safari.jpg",
+    "image": "https://bsqvdcfziwmlpwiksmtt.supabase.co/storage/v1/object/public/images/sundarban-beauty.jpg",
     "category": "Mangrove Forest Expeditions",
     "shortDescription": "Explore the unique ecosystem of the Sundarbans mangrove forest.",
     "adventureCost": "$1100",
@@ -221,34 +221,6 @@
     "specialInstructions": [
       "Wear waterproof footwear.",
       "Follow guide instructions to avoid wildlife disturbance."
-    ]
-  },
-  {
-    "id": 9,
-    "title": "Bhutan River Kayaking Adventure",
-    "image": "bhutan_kayaking.jpg",
-    "category": "River Adventures",
-    "shortDescription": "Paddle through Bhutan's scenic rivers surrounded by Himalayan views.",
-    "adventureCost": "$1300",
-    "bookingAvailability": true,
-    "location": "Bhutan",
-    "duration": "7 days",
-    "adventureLevel": "Moderate",
-    "includedItems": [
-      "Professional kayaking guide",
-      "Kayaking gear",
-      "Meals during the trip",
-      "Accommodation in eco-lodges"
-    ],
-    "ecoFriendlyFeatures": [
-      "Plastic-free trips",
-      "Local community involvement",
-      "Minimal-impact campsites"
-    ],
-    "maxGroupSize": 6,
-    "specialInstructions": [
-      "Prior kayaking experience recommended.",
-      "Carry dry bags for personal items."
     ]
   }
 ]
