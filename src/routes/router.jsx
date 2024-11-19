@@ -6,6 +6,7 @@ import NotFound from "../pages/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../pages/Profile";
 import Home from "../pages/Home";
+import AdventureDetails from "../pages/AdventureDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Profile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/adventure-details",
+        element: (
+          <PrivateRoute>
+            <AdventureDetails />
           </PrivateRoute>
         ),
       },

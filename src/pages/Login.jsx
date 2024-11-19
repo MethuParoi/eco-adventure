@@ -1,7 +1,7 @@
 import { useState, useRef, useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { user, loginUser, googleSignIn } = useContext(AuthContext);
@@ -9,6 +9,8 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  //use navigate to redirect to home page
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +32,8 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+
+      navigate("/");
     } catch (error) {
       console.error("Error logging in with Google:", error.message);
     }

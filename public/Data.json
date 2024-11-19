@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "title": "Everest Base Camp Trek",
+    "image": "everest_base_camp.jpg",
+    "category": "Mountain Treks",
+    "shortDescription": "A breathtaking trek to the base of the world's highest mountain.",
+    "adventureCost": "$1500",
+    "bookingAvailability": true,
+    "location": "Nepal",
+    "duration": "14 days",
+    "adventureLevel": "Hard",
+    "includedItems": [
+      "Experienced guide",
+      "Lodging in teahouses",
+      "All meals during the trek",
+      "Permits and park fees"
+    ],
+    "ecoFriendlyFeatures": [
+      "Leave-no-trace policy",
+      "Support for local communities",
+      "Reusable water bottles"
+    ],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Acclimatization is critical—plan extra days if necessary.",
+      "Carry layers for unpredictable weather."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Great Barrier Reef Dive",
+    "image": "great_barrier_reef.jpg",
+    "category": "Ocean Dives",
+    "shortDescription": "Explore the vibrant underwater world of the Great Barrier Reef.",
+    "adventureCost": "$1200",
+    "bookingAvailability": true,
+    "location": "Australia",
+    "duration": "7 days",
+    "adventureLevel": "Moderate",
+    "includedItems": [
+      "Certified dive instructor",
+      "Dive equipment rental",
+      "Boat transfers",
+      "Meals onboard"
+    ],
+    "ecoFriendlyFeatures": [
+      "Coral-friendly sunscreen",
+      "Eco-certified dive boats",
+      "Marine life conservation donation"
+    ],
+    "maxGroupSize": 8,
+    "specialInstructions": [
+      "Bring a valid dive certification.",
+      "Avoid touching or disturbing coral reefs."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Serengeti Wildlife Safari",
+    "image": "serengeti_safari.jpg",
+    "category": "Wildlife Safaris",
+    "shortDescription": "Experience the majestic wildlife of the Serengeti in its natural habitat.",
+    "adventureCost": "$1800",
+    "bookingAvailability": true,
+    "location": "Tanzania",
+    "duration": "10 days",
+    "adventureLevel": "Easy",
+    "includedItems": [
+      "Professional safari guide",
+      "4x4 safari vehicle",
+      "Park entrance fees",
+      "Lodging in eco-lodges"
+    ],
+    "ecoFriendlyFeatures": [
+      "Support for local conservation projects",
+      "Eco-lodges with sustainable practices",
+      "Non-intrusive wildlife viewing"
+    ],
+    "maxGroupSize": 12,
+    "specialInstructions": [
+      "Carry binoculars for better viewing.",
+      "Dress in neutral tones to avoid disturbing wildlife."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Amazon Rainforest Expedition",
+    "image": "amazon_expedition.jpg",
+    "category": "Forest Expeditions",
+    "shortDescription": "Discover the incredible biodiversity of the Amazon rainforest.",
+    "adventureCost": "$2000",
+    "bookingAvailability": true,
+    "location": "Brazil",
+    "duration": "12 days",
+    "adventureLevel": "Moderate",
+    "includedItems": [
+      "Local expert guide",
+      "Jungle accommodations",
+      "Meals and snacks",
+      "Transportation within the forest"
+    ],
+    "ecoFriendlyFeatures": [
+      "Use of biodegradable toiletries",
+      "Support for reforestation efforts",
+      "Eco-friendly waste disposal"
+    ],
+    "maxGroupSize": 8,
+    "specialInstructions": [
+      "Vaccinations for tropical diseases are recommended.",
+      "Wear long-sleeved clothing to protect against insects."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Grand Canyon Camping Retreat",
+    "image": "grand_canyon_camping.jpg",
+    "category": "Camping Retreats",
+    "shortDescription": "Enjoy a peaceful retreat in the iconic Grand Canyon.",
+    "adventureCost": "$800",
+    "bookingAvailability": true,
+    "location": "USA",
+    "duration": "5 days",
+    "adventureLevel": "Easy",
+    "includedItems": [
+      "Tents and sleeping bags",
+      "Campfire meals",
+      "Guided hiking tours",
+      "Park permits"
+    ],
+    "ecoFriendlyFeatures": [
+      "Solar-powered lighting",
+      "Compostable toiletries",
+      "Waste recycling"
+    ],
+    "maxGroupSize": 15,
+    "specialInstructions": [
+      "Pack layers for cool nights.",
+      "Follow fire safety guidelines."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Zambezi River Rafting",
+    "image": "zambezi_rafting.jpg",
+    "category": "River Adventures",
+    "shortDescription": "Thrill-seekers’ paradise with adrenaline-pumping rapids on the Zambezi.",
+    "adventureCost": "$900",
+    "bookingAvailability": true,
+    "location": "Zimbabwe",
+    "duration": "3 days",
+    "adventureLevel": "Hard",
+    "includedItems": [
+      "Professional rafting guide",
+      "Safety equipment",
+      "Meals and snacks",
+      "Camping gear"
+    ],
+    "ecoFriendlyFeatures": [
+      "Eco-certified rafting company",
+      "River cleanup initiatives",
+      "Biodegradable food containers"
+    ],
+    "maxGroupSize": 6,
+    "specialInstructions": [
+      "Participants must be strong swimmers.",
+      "Secure waterproof bags for personal items."
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Sahara Desert Exploration",
+    "image": "sahara_exploration.jpg",
+    "category": "Desert Exploration",
+    "shortDescription": "Uncover the mystique of the Sahara with a guided desert trek.",
+    "adventureCost": "$1400",
+    "bookingAvailability": true,
+    "location": "Morocco",
+    "duration": "6 days",
+    "adventureLevel": "Moderate",
+    "includedItems": [
+      "Camel rides",
+      "Traditional Berber meals",
+      "Tent accommodations",
+      "Local desert guide"
+    ],
+    "ecoFriendlyFeatures": [
+      "Solar-powered camp lighting",
+      "Waste recycling program",
+      "Support for local artisan communities"
+    ],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Carry sunscreen and plenty of water.",
+      "Prepare for cold desert nights."
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Sundarbans Mangrove Safari",
+    "image": "sundarbans_safari.jpg",
+    "category": "Mangrove Forest Expeditions",
+    "shortDescription": "Explore the unique ecosystem of the Sundarbans mangrove forest.",
+    "adventureCost": "$1100",
+    "bookingAvailability": true,
+    "location": "Bangladesh",
+    "duration": "5 days",
+    "adventureLevel": "Easy",
+    "includedItems": [
+      "Boat rides",
+      "Local guide",
+      "Traditional meals",
+      "Wildlife permits"
+    ],
+    "ecoFriendlyFeatures": [
+      "Mangrove reforestation support",
+      "Eco-friendly lodging",
+      "Wildlife conservation projects"
+    ],
+    "maxGroupSize": 10,
+    "specialInstructions": [
+      "Wear waterproof footwear.",
+      "Follow guide instructions to avoid wildlife disturbance."
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Bhutan River Kayaking Adventure",
+    "image": "bhutan_kayaking.jpg",
+    "category": "River Adventures",
+    "shortDescription": "Paddle through Bhutan's scenic rivers surrounded by Himalayan views.",
+    "adventureCost": "$1300",
+    "bookingAvailability": true,
+    "location": "Bhutan",
+    "duration": "7 days",
+    "adventureLevel": "Moderate",
+    "includedItems": [
+      "Professional kayaking guide",
+      "Kayaking gear",
+      "Meals during the trip",
+      "Accommodation in eco-lodges"
+    ],
+    "ecoFriendlyFeatures": [
+      "Plastic-free trips",
+      "Local community involvement",
+      "Minimal-impact campsites"
+    ],
+    "maxGroupSize": 6,
+    "specialInstructions": [
+      "Prior kayaking experience recommended.",
+      "Carry dry bags for personal items."
+    ]
+  }
+]

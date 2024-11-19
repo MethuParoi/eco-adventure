@@ -4,24 +4,27 @@ import './index.css'
 import { RouterProvider } from "react-router-dom";
 import AuthProvider from './provider/AuthProvider.jsx';
 import router from './routes/router.jsx';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Main />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <Home/>
-//       },
-//     ],
-//   },
-// ]);
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </AuthProvider>
   </StrictMode>
 );
