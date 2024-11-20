@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/adventure-details",
+        path: "/adventure-details/:id",
         element: (
           <PrivateRoute>
             <AdventureDetails />

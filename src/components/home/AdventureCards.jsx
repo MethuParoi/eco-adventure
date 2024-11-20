@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { useContext } from "react";
+
 function AdventureCards({ spot }) {
+  const { setDetails } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const handleExplore = () => {
+    navigate(`/adventure-details/${spot.id}`);
+  };
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
       <figure>
@@ -15,7 +25,13 @@ function AdventureCards({ spot }) {
           </div>
         ))}
 
-        <button className="w-[100%] h-12 bg-primary hover:bg-secondary text-neutral text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto mt-4">
+        <button
+          onClick={() => {
+            handleExplore();
+            setDetails(spot);
+          }}
+          className="w-[100%] h-12 bg-primary hover:bg-secondary text-neutral text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto mt-4"
+        >
           Explore Now
         </button>
       </div>
