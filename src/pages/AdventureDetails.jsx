@@ -3,7 +3,9 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useParams } from "react-router-dom";
 import { GiDuration, GiTakeMyMoney } from "react-icons/gi";
 import { TbCategory } from "react-icons/tb";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaAvianex, FaLocationDot } from "react-icons/fa6";
+import { SiLevelsdotfyi } from "react-icons/si";
+import { IoIosPeople } from "react-icons/io";
 
 function AdventureDetails() {
   const { id } = useParams();
@@ -23,19 +25,23 @@ function AdventureDetails() {
   // console.log("details", details);
   return (
     <div className="min-h-screen min-w-screen">
-      <div>
-        <img className="w-full h-96 object-cover" src={details?.image} alt="" />
+      <div className="w-full sm:w-[90%] mx-auto">
+        <img
+          className="w-full h-[420px] object-cover"
+          src={details?.image}
+          alt=""
+        />
       </div>
 
       <div>
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 my-16">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 my-16 justify-items-center">
+            <div className="px-4 md:px-0">
               <h1 className="text-4xl font-bold mt-4">{details?.title}</h1>
               <p className="text-lg text-gray-600 mt-4">
                 {details?.shortDescription}
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3s gap-y-4 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-4 justify-items-center">
                 <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-around">
                   <GiDuration className="text-2xl text-secondary " />
                   {details?.duration}
@@ -45,29 +51,49 @@ function AdventureDetails() {
 
                   {details?.location}
                 </div>
-                <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-between">
+                <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-between ">
                   <TbCategory className="text-2xl text-secondary " />
-                  {details?.category}
+                  <span className="line-clamp-1">{details?.category}</span>
                 </div>
                 <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-around">
                   <GiTakeMyMoney className="text-2xl text-secondary " />
                   {details?.adventureCost}
                 </div>
+                <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-around">
+                  <FaAvianex className="text-2xl text-secondary " />
+                  {details?.bookingAvailability === true
+                    ? "Available"
+                    : "Not Available"}
+                </div>
+                <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-around">
+                  <SiLevelsdotfyi className="text-2xl text-secondary " />
+                  {details?.adventureLevel}
+                </div>
+                <div className="badge badge-secondary bg-accent border-transparent text-lg font-semibold text-gray-700  h-12 w-48 flex justify-around">
+                  <IoIosPeople className="text-2xl text-secondary " />
+                  {details?.maxGroupSize}
+                </div>
               </div>
-              <button className="w-[100%] h-12 bg-primary hover:bg-secondary text-neutral text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto mt-4">
+              <button className="mt-10 w-[100%] h-12 bg-primary hover:bg-secondary text-neutral text-lg font-medium rounded-2xl  flex items-center justify-center mx-auto">
                 Explore Now
               </button>
             </div>
 
             {/* accordian */}
-            <div className="join join-vertical w-full ">
+            <div className="join join-vertical w-[90%] sm:w-[600px] mt-10 lg:mt-0">
               <div className="collapse collapse-arrow join-item border-base-300 border bg-neutral">
                 <input type="radio" name="my-accordion-4" defaultChecked />
                 <div className="collapse-title text-xl font-medium">
                   Included Items
                 </div>
                 <div className="collapse-content">
-                  <p>hello</p>
+                  <ul className="list-disc pl-5 text-gray-800">
+                    {details?.includedItems.map((item) => (
+                      <li key={item} className="line-clamp-1">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border bg-neutral">
@@ -76,7 +102,13 @@ function AdventureDetails() {
                   Eco Friendly Features
                 </div>
                 <div className="collapse-content">
-                  <p>hello</p>
+                  <ul className="list-disc pl-5 text-gray-800">
+                    {details?.ecoFriendlyFeatures.map((item) => (
+                      <li key={item} className="line-clamp-1">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border bg-neutral">
@@ -85,7 +117,13 @@ function AdventureDetails() {
                   Special Instructions
                 </div>
                 <div className="collapse-content">
-                  <p>hello</p>
+                  <ul className="list-disc pl-5 text-gray-800">
+                    {details?.specialInstructions.map((item) => (
+                      <li key={item} className="line-clamp-1">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

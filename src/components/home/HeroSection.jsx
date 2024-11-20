@@ -20,7 +20,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 
-import { useNavigate } from "react-router-dom";
 import { useContext, useRef } from "react";
 // import LoadingContext from "../ContextApi/LoadingContext";
 
@@ -29,7 +28,6 @@ import HeroBanner from "./HeroBanner";
 import Button from "../ui/Button";
 
 export default function HeroSection() {
-  const navigate = useNavigate();
   // const { setIsLoading } = useContext(LoadingContext);
 
   // Custom navigation buttons
@@ -72,7 +70,7 @@ export default function HeroSection() {
                   label="Explore Now"
                   type="primary"
                   onClick={() => {
-                    navigate("/adventure-details");
+                    window.scrollTo({ top: 500, behavior: "smooth" });
                   }}
                 />
               </div>
@@ -93,7 +91,7 @@ export default function HeroSection() {
                   label="Explore Now"
                   type="primary"
                   onClick={() => {
-                    navigate("/adventure-details");
+                    window.scrollTo({ top: 500, behavior: "smooth" });
                   }}
                 />
               </div>
@@ -112,7 +110,7 @@ export default function HeroSection() {
                 label="Explorer Now"
                 type="primary"
                 onClick={() => {
-                  navigate("/adventure-details");
+                  window.scrollTo({ top: 500, behavior: "smooth" });
                 }}
               />
             </div>

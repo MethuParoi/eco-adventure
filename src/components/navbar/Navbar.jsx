@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className="navbar bg-secondary pr-6">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-20">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,10 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-2xl text-neutral">
+        <Link
+          to={"/"}
+          className="btn btn-ghost text-sm sm:text-2xl text-neutral"
+        >
           Eco-Adventure Experiences
         </Link>
       </div>
@@ -88,7 +91,7 @@ function Navbar() {
             user ? handleLogout() : null;
             user ? navigate("/") : navigate("/login");
           }}
-          className="text-neutral hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent "
+          className="text-neutral hover:text-gray-800 btn bg-primary border-transparent hover:bg-accent hidden md:block"
         >
           {user ? "Logout" : "Login"}
         </button>
@@ -96,7 +99,7 @@ function Navbar() {
           <div
             onMouseEnter={() => setShowUserName(true)}
             onMouseLeave={() => setShowUserName(false)}
-            className="pr-6 pl-5 cursor-pointer"
+            className=" sm:pr-6 pl-5 cursor-pointer"
           >
             <img
               src={user.photoURL}
