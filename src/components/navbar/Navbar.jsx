@@ -75,13 +75,25 @@ function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <button className="text-neutral">Home</button>
+            <button onClick={() => navigate("/")} className="text-neutral">
+              Home
+            </button>
           </li>
           <li>
-            <button className="text-neutral">Update Profile</button>
+            <button
+              onClick={() => navigate("/profile/update-profile")}
+              className="text-neutral"
+            >
+              Update Profile
+            </button>
           </li>
           <li>
-            <button className="text-neutral">User Profile</button>
+            <button
+              onClick={() => navigate("/profile")}
+              className="text-neutral"
+            >
+              User Profile
+            </button>
           </li>
         </ul>
       </div>

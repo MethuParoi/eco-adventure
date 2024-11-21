@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroSection from "../components/home/HeroSection";
 import AdventureCards from "../components/home/AdventureCards";
+import ExtraSection from "../components/home/ExtraSection";
 
 function Home() {
   const [travelSpot, setTravelSpot] = useState([]);
@@ -20,6 +21,7 @@ function Home() {
           <AdventureCards key={spot.id} spot={spot} />
         ))}
       </div>
+      <ExtraSection />
     </div>
   );
 }

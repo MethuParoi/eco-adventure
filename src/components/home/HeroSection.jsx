@@ -9,8 +9,8 @@ import {
 import banner13 from "../../assets/heroImg/hero-1.jpg";
 import banner14 from "../../assets/heroImg/hero-2.jpg";
 import banner11 from "../../assets/heroImg/hero-3.jpg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import "animate.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,7 +20,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
 
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 // import LoadingContext from "../ContextApi/LoadingContext";
 
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
@@ -28,8 +28,7 @@ import HeroBanner from "./HeroBanner";
 import Button from "../ui/Button";
 
 export default function HeroSection() {
-  // const { setIsLoading } = useContext(LoadingContext);
-
+  const [activeIndex, setActiveIndex] = useState(0);
   // Custom navigation buttons
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -57,12 +56,17 @@ export default function HeroSection() {
             swiper.navigation.update();
           });
         }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
       >
         <SwiperSlide>
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner13} />
-            <div className="absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem] ">
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
+            <div
+              className={`absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem] ${
+                activeIndex === 0 ? "animate__animated animate__zoomIn" : ""
+              }`}
+            >
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 animate__animated animate__zoomIn">
                 Explore the Mountain
               </h1>
               <div className="lg:pl-[20rem]">
@@ -81,7 +85,11 @@ export default function HeroSection() {
         <SwiperSlide>
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner11} />
-            <div className="absolute flex flex-col justify-center items-center  lg:inline lg:pr-[50rem]">
+            <div
+              className={`absolute flex flex-col justify-center items-center  lg:inline lg:pr-[50rem] ${
+                activeIndex === 1 ? "animate__animated animate__zoomIn" : ""
+              }`}
+            >
               <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
                 Explore the Greenery
               </h1>
@@ -101,8 +109,12 @@ export default function HeroSection() {
         <SwiperSlide>
           <div className="flex justify-center items-center h-full w-full">
             <HeroBanner source={banner14} />
-            <div className="absolute flex flex-col justify-center items-center lg:inline lg:pr-[60rem]">
-              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
+            <div
+              className={`absolute flex flex-col justify-center items-center lg:inline lg:pr-[60rem] ${
+                activeIndex === 2 ? "animate__animated animate__zoomIn" : ""
+              }`}
+            >
+              <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 ">
                 View the Sunrise
               </h1>
 
