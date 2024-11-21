@@ -2,8 +2,15 @@ import { useEffect, useState } from "react";
 import HeroSection from "../components/home/HeroSection";
 import AdventureCards from "../components/home/AdventureCards";
 import ExtraSection from "../components/home/ExtraSection";
+import { useLocation } from "react-router-dom";
 
 function Home() {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "eco-adventure | Home";
+    document.title = pageTitle;
+  }, [location]);
+
   const [travelSpot, setTravelSpot] = useState([]);
   useEffect(() => {
     fetch("Data.json")

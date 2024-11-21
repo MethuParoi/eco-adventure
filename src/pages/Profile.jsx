@@ -1,20 +1,21 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 // import "./Profile.css";
 import ProfileImageSection from "../components/profile/ProfileImageSection";
 import { CgProfile } from "react-icons/cg";
 import ProfileDesc from "../components/profile/ProfileDesc";
-import { useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLocation } from "react-router-dom";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "eco-adventure | Profile";
+    document.title = pageTitle;
+  }, [location]);
 
-  const handleEdit = () => {
-    setEdit(!edit);
-  };
+  const { user } = useContext(AuthContext);
 
   return (
     <div className=" w-full  text-gray-700  ">
@@ -32,10 +33,7 @@ const Profile = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 border-transparent m-12  rounded-[4rem] shadow-xl lg:h-[30rem] h-[35rem] w-[90%] bg-neutral backdrop-blur-[30px] justify-items-center items-center mx-auto mb-24">
         <div className="flex items-center justify-center">
           <div className="">
-            <ProfileImageSection
-              profileImage={user?.photoURL}
-              handleEdit={handleEdit}
-            />
+            <ProfileImageSection profileImage={user?.photoURL} />
           </div>
         </div>
 

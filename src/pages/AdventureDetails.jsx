@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { GiDuration, GiTakeMyMoney } from "react-icons/gi";
 import { TbCategory } from "react-icons/tb";
 import { FaAvianex, FaLocationDot } from "react-icons/fa6";
@@ -8,6 +8,12 @@ import { SiLevelsdotfyi } from "react-icons/si";
 import { IoIosPeople } from "react-icons/io";
 
 function AdventureDetails() {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "eco-adventure | Details";
+    document.title = pageTitle;
+  }, [location]);
+
   const { id } = useParams();
   const [details, setDetails] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

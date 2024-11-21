@@ -3,13 +3,19 @@ import {
   sendEmailVerification,
   updateProfile,
 } from "firebase/auth";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Register = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "eco-adventure | Register";
+    document.title = pageTitle;
+  }, [location]);
+
   const { createUser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({

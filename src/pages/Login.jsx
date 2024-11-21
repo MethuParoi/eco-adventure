@@ -1,12 +1,17 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const pageTitle = "eco-adventure | Login";
+    document.title = pageTitle;
+  }, [location]);
+
   const { user, loginUser, googleSignIn } = useContext(AuthContext);
-  console.log("User login route:", user);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const emailRef = useRef(null);
   const passwordRef = useRef(null);

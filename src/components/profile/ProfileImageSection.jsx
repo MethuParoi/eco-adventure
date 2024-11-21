@@ -1,6 +1,4 @@
-import { MdEdit } from "react-icons/md";
-
-const ProfileImageSection = ({ profileImage, handleEdit }) => {
+const ProfileImageSection = ({ profileImage }) => {
   return (
     <div className="lg:pt-10 lg:pr-14 xl:border-r-2 border-primary relative">
       <div>
