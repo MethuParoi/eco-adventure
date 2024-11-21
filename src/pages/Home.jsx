@@ -23,6 +23,9 @@ function Home() {
   return (
     <div className="">
       <HeroSection />
+      <h2 className="text-3xl font-semibold text-center mt-16 mb-8">
+        Adventure Experiences
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-16 justify-items-center my-16">
         {travelSpot.map((spot) => (
           <AdventureCards key={spot.id} spot={spot} />

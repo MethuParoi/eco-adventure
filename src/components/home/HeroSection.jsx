@@ -46,7 +46,6 @@ export default function HeroSection() {
           nextEl: navigationNextRef.current,
         }}
         pagination={{ clickable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
         onSwiper={(swiper) => {
           // Necessary to update refs for custom buttons
           setTimeout(() => {

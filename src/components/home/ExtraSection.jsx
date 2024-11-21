@@ -4,8 +4,8 @@ function ExtraSection() {
   return (
     <div>
       <div className="mt-16">
-        <h1 className="text-2xl font-semibold text-center mb-6">
-          Users Review
+        <h1 className="text-3xl font-semibold text-center mb-6">
+          User Reviews
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5">
           <div className="card card-side bg-neutral shadow-xl w-[90%] sm:w-[400px] h-[150px] px-5 flex justify-around items-center">
@@ -59,7 +59,7 @@ function ExtraSection() {
       </div>
 
       {/* accordian */}
-      <h2 className="text-2xl font-semibold text-center mt-16 mb-8">
+      <h2 className="text-3xl font-semibold text-center mt-16 mb-8">
         Frequently Asked Questions
       </h2>
       <div className="w-[90%] mx-auto mb-16  text-neutral">

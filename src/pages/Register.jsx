@@ -7,7 +7,9 @@ import { useContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { FaGoogle } from "react-icons/fa6";
 
 const Register = () => {
   const location = useLocation();
@@ -15,8 +17,20 @@ const Register = () => {
     const pageTitle = "eco-adventure | Register";
     document.title = pageTitle;
   }, [location]);
+  const navigate = useNavigate();
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+      navigate("/");
+      toast.success("User logged in successfully!");
+    } catch (error) {
+      toast.error(error.message);
+      console.error("Error logging in with Google:", error.message);
+    }
+  };
 
   const [formData, setFormData] = useState({
     username: "",
@@ -39,14 +53,13 @@ const Register = () => {
     setErrorMessage("");
     setVerificationMessage("");
 
-    // Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    // Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter,
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
     // Validate password
     if (!passwordRegex.test(formData.password)) {
       setErrorMessage(
-        "Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character."
+        "Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter."
       );
       return;
     }
@@ -55,8 +68,7 @@ const Register = () => {
     createUser(formData.email, formData.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-        console.log("User registered:", user);
+
         setSuccess(true);
         setFormData({
           username: "",
@@ -65,10 +77,8 @@ const Register = () => {
           password: "",
         }); // Reset form data
         e.target.reset();
-        // send email verification address
-        sendEmailVerification(auth.currentUser).then(() => {
-          setVerificationMessage("Verification email sent");
-        });
+        toast.success("User registered successfully!");
+        navigate("/");
         // update user profile
         updateProfile(auth.currentUser, {
           displayName: formData.username,
@@ -129,7 +139,7 @@ const Register = () => {
               htmlFor="photoUrl"
               className="block text-sm font-medium text-gray-600"
             >
-              Avatar
+              Avatar URL
             </label>
             <input
               type="text"
@@ -198,6 +208,14 @@ const Register = () => {
           </button>
         </form>
 
+        <button
+          onClick={() => handleGoogleSignIn()}
+          className="w-full flex justify-center items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-secondary rounded-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <FaGoogle />
+          <p className="text-lg">Login with Google</p>
+        </button>
+
         <p className="text-sm text-center text-gray-600">
           Already have an account?{" "}
           <Link to="/login" className="text-blue-500 hover:underline">
@@ -212,12 +230,6 @@ const Register = () => {
         </div>
 
         {errorMessage && <p className="text-sm text-red-500">{errorMessage}</p>}
-        {success && (
-          <p className="text-sm text-green-500">User registered successfully</p>
-        )}
-        {verificationMessage && (
-          <p className="text-sm text-blue-500">{verificationMessage}</p>
-        )}
       </div>
     </div>
   );

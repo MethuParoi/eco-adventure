@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import Home from "../pages/Home";
 import AdventureDetails from "../pages/AdventureDetails";
 import UpdateProfile from "../components/profile/UpdateProfile";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
   },
   {
     path: "*",

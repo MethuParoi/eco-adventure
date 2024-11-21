@@ -1,9 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 function Navbar() {
+  const location = useLocation();
+
   const [showUserName, setShowUserName] = useState(false);
   const navigate = useNavigate();
   const { user, logoutUser } = useContext(AuthContext);
@@ -47,7 +49,7 @@ function Navbar() {
             <li>
               <button
                 onClick={() => {
-                  user ? handleLogout : null;
+                  user ? handleLogout() : null;
                   user ? navigate("/") : navigate("/login");
                 }}
                 className="text-neutral"
@@ -57,10 +59,33 @@ function Navbar() {
             </li>
             <li>
               <button
-                onClick={() => navigate("/register")}
+                onClick={() => {
+                  user ? null : navigate("/register");
+                }}
                 className="text-neutral"
               >
                 {user ? user.displayName || user.email : "Register"}
+              </button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/")} className="text-neutral">
+                Home
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => navigate("/profile")}
+                className="text-neutral"
+              >
+                User Profile
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => navigate("/profile/update-profile")}
+                className="text-neutral"
+              >
+                Update Profile
               </button>
             </li>
           </ul>
@@ -75,24 +100,34 @@ function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <button onClick={() => navigate("/")} className="text-neutral">
+            <button
+              onClick={() => navigate("/")}
+              className={`text-neutral ${
+                location.pathname === "/" && "active"
+              }`}
+            >
               Home
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => navigate("/profile")}
+              className={`text-neutral ${
+                location.pathname === "/profile" && "active"
+              }`}
+            >
+              User Profile
             </button>
           </li>
           <li>
             <button
               onClick={() => navigate("/profile/update-profile")}
-              className="text-neutral"
+              className={`text-neutral ${
+                location.pathname === "/profile/update-profile" && "active"
+              }`}
             >
               Update Profile
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => navigate("/profile")}
-              className="text-neutral"
-            >
-              User Profile
             </button>
           </li>
         </ul>
@@ -116,7 +151,7 @@ function Navbar() {
             <img
               src={user.photoURL}
               alt="Avatar"
-              className="w-14 rounded-full border-2 border-neutral"
+              className="w-14 h-14 rounded-full border-2 border-neutral object-cover"
             />
           </div>
         )}
