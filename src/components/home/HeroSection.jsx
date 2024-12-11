@@ -6,7 +6,7 @@ import {
   A11y,
   Autoplay,
 } from "swiper/modules";
-import banner13 from "../../assets/heroImg/hero-1.jpg";
+import banner13 from "../../assets/heroImg/hero-01.jpg";
 import banner14 from "../../assets/heroImg/hero-2.jpg";
 import banner11 from "../../assets/heroImg/hero-3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -62,7 +62,7 @@ export default function HeroSection() {
             <HeroBanner source={banner13} />
             <div
               className={`absolute flex flex-col justify-center items-center lg:inline lg:pl-[50rem] ${
-                activeIndex === 0 ? "animate__animated animate__zoomIn" : ""
+                activeIndex === 0 ? "" : ""
               }`}
             >
               <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 animate__animated animate__zoomIn">
@@ -86,7 +86,7 @@ export default function HeroSection() {
             <HeroBanner source={banner11} />
             <div
               className={`absolute flex flex-col justify-center items-center  lg:inline lg:pr-[50rem] ${
-                activeIndex === 1 ? "animate__animated animate__zoomIn" : ""
+                activeIndex === 1 ? "" : ""
               }`}
             >
               <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1">
@@ -110,7 +110,7 @@ export default function HeroSection() {
             <HeroBanner source={banner14} />
             <div
               className={`absolute flex flex-col justify-center items-center lg:inline lg:pr-[60rem] ${
-                activeIndex === 2 ? "animate__animated animate__zoomIn" : ""
+                activeIndex === 2 ? "" : ""
               }`}
             >
               <h1 className="text-primary text-2xl lg:text-5xl font-semibold select-none pointer-events-none bg-gradient-to-r from-gray-700 to-transparent rounded-lg px-1 py-1 ">
