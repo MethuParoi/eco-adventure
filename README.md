@@ -2,11 +2,26 @@
 
 **Live Demo:** [Eco-Adventure Experiences Live Demo](https://auth-01-a13b1.firebaseapp.com/)
 
+<div align="center">
+
+![Header](https://lrbogqzvnkxhatqgtwtr.supabase.co/storage/v1/object/public/images/eco-adventure-01.jpeg)
+
+![Header](https://lrbogqzvnkxhatqgtwtr.supabase.co/storage/v1/object/public/images/eco-adventure-02.jpeg)
+
+</div>
 
 
 ## 📝 Project Purpose
 
 Eco-Adventure Experiences is a travel blog designed to inspire and guide adventure enthusiasts in exploring eco-friendly travel destinations. The platform provides detailed information on various adventure spots, including activities, accommodations, and eco-friendly practices. By promoting sustainable travel, Eco-Adventure Experiences aims to encourage responsible tourism and environmental conservation. Users can access real-time updates, share their experiences, and connect with like-minded travelers, making it a comprehensive resource for planning unforgettable eco-adventures.
+
+
+## 🚀  List of Technologies used in the project
+
+- **React.js** - for building a dynamic and responsive user interface
+- **Tailwind CSS** - for styling responsive user interface
+- **React-toastify** - for elegant notifications and alerts
+- **React-icons** - for adding iconography and enhancing the UX
 
 
 ## 🌟 Key Features
